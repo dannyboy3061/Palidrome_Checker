@@ -15,6 +15,12 @@ function showChecker(){
     mainWrapper.style.display = 'flex';
 }
 
+textInput.addEventListener('keypress', (btn) => {
+    if(btn.key === "Enter"){
+        checkBtn.click();
+    }
+})
+
 function isPalindrome(word){
 
     const cleanWord = word.replace(/[^A-Za-z0-9]/g, '').toLowerCase();

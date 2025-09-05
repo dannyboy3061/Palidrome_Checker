@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Is It A Palindrome?</title>
@@ -14,13 +15,19 @@
 
     <div id="main-wrapper">
         <div id="wrapper">
-            <label for="text-input" id="word-input">Please enter a word to check:</label>
+            <label for="text-input" id="word-input">Enter a word to check for palindrome:</label>
             <div class="input">
                 <input type="text" id="text-input" placeholder="Enter word"/>
                 <button id="check-btn">Check Word</button>
             </div>
+
             <div id="result"></div>
         </div>
+
+        <div id="palindrome">
+            <p class="def"><i class="fa fa-lightbulb-o"></i> A <span class="p-word">palindrome</span> is a word, phrase, or sequence that reads the same backward as forward, e.g., madam or nurses run.</p>
+        </div>
+
     </div>
 
     
