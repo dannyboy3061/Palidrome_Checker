@@ -1,0 +1,48 @@
+const beginButton = document.getElementById('begin-button');
+const container = document.getElementById('container');
+const mainWrapper = document.getElementById('main-wrapper');
+
+beginButton.addEventListener('click', showChecker);
+
+const textInput = document.getElementById('text-input');
+const checkBtn = document.getElementById('check-btn');
+
+checkBtn.addEventListener('click', displayResults);
+
+
+function showChecker(){
+    container.style.display = 'none';
+    mainWrapper.style.display = 'flex';
+}
+
+function isPalindrome(word){
+
+    const cleanWord = word.replace(/[^A-Za-z0-9]/g, '').toLowerCase();
+
+    let cleanWordArr = cleanWord.split('');
+    const length = cleanWordArr.length;
+    let newWordArr = [];
+
+    for(let i = 0; i < length; i++){
+        newWordArr.push(cleanWordArr.pop());
+    }
+    const newWord = newWordArr.join('');
+
+    if(newWord === cleanWord ){
+        return `${word} is a palindrome`;
+    } else{
+        return `${word} is not a palindrome`;
+    }
+}
+
+function displayResults(){
+    const word = textInput.value;
+     if(word === ""){
+        alert("Please input a value");
+        return;
+    }else{
+    const result = document.getElementById('result');
+    result.innerText = isPalindrome(word);
+    }
+
+}
