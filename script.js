@@ -24,15 +24,8 @@ textInput.addEventListener('keypress', (btn) => {
 function isPalindrome(word){
 
     const cleanWord = word.replace(/[^A-Za-z0-9]/g, '').toLowerCase();
-
-    let cleanWordArr = cleanWord.split('');
-    const length = cleanWordArr.length;
-    let newWordArr = [];
-
-    for(let i = 0; i < length; i++){
-        newWordArr.push(cleanWordArr.pop());
-    }
-    const newWord = newWordArr.join('');
+    let newWord = cleanWord.split('').reverse().join('');
+    
 
     if(newWord === cleanWord ){
         return `${word} is a palindrome`;
